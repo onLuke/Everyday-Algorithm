@@ -14,31 +14,28 @@ function answer(dwarf) {
 
     if(s==r)
       if(result.reduce((acc,el) => acc+el) == sumOfFalse){
-      // console.log(`result4 = ${result}`)
-      return 1;
-      }
-      else {
-        // console.log(`result3 = ${result}`);
-        return 0;
+      return true;
+      }else {
+        return false;
       };
 
       for(let i = idx; dwarf.length-i >= r - s; i++){
-        if(s==0){
-          // console.log(`!!! 시작 부분 result = ${result}`);
-        }
+        //조합은 기준 원소 이후의 원소들만 골라야함.
+        //r(고를 갯수) - s(초기값) 보다 length가 크거나 같다는 것은 기준 원소(s) 이후에 원소가 고를 갯수(r)만큼 남아 있을 때 까지만 수행한다는 뜻이다.
         result[s] = dwarf[i];
-        // console.log(`result2 = ${result}`);
         if(recursive(dwarf, result, s+1, i+1, r)){
-          return 1;
+          return;
         }
         recursive(dwarf, result, s+1, i+1, r);
       };
     
   }
-  
-    recursive(dwarf, result, 0, 0, 2);
 
-    result = dwarf.filter(el => result.indexOf(el) == -1);
+    console.log(result);
+    recursive(dwarf, result, 0, 0, 2);
+    console.log(result);
+
+    result = dwarf.filter(el => result.indexOf(el) === -1);
 
 
   // 코드 구현 종료 영역
