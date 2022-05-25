@@ -1,4 +1,3 @@
-
 /* user code */
 function answer(dwarf, sum, selectNumber) {
   let result = [];
