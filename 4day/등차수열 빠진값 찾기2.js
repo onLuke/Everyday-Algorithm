@@ -1,26 +1,28 @@
-/* 2. 잃어버린 카드 찾기 */
+/* 등차수열 빠진값 찾기 */
 
 /* user code */
 function answer(a, b, c) {
     let number = 0;
-  
+
+   // 코드 구현 시작 영역
+
     // sort
     num = [a, b, c];
     num.sort((x, y) => x - y);
   
-    // 코드 구현 시작 영역
-  
     let d = 0;
   
-  
+    //등차값을 찾고,
     for(i =1; i<num.length; i++){
       d += num[i] - num[i-1];
     };
     d /= num.length;
+
   
-  
+    //등차값이 일치하지 않는 원소를 찾아 number에 대입
     num.forEach((el, index, array) => {
-      if(array[index+1]-el != d && index != num.length-1){
+      if(array[index+1]-el != d && index !== num.length-1){
+        //등차값이 일치하지 않으면서 마지막 원소가 아닌 값을 찾는다
         number = el+d;
       }
     })
