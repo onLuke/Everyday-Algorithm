@@ -1,7 +1,7 @@
 //합계가 특정 값이 되는 조합 찾기
 
 
-function findCombination(dwarf, sum, selectNumber) {
+function findCombination(arr, sum, selectNumber) {
   let result = [];
 
     function combination(arr, sum, selectNumber, selectNumberOrigin){
@@ -46,7 +46,7 @@ function findCombination(dwarf, sum, selectNumber) {
       return innerRes;
   };
 
-  combination(dwarf, sum, selectNumber, selectNumber);
+  combination(arr, sum, selectNumber, selectNumber);
 
   
   return result;
