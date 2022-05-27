@@ -1,8 +1,8 @@
-/* user code */
-function answer(dwarf, sum, selectNumber) {
+//고를 원소 개수 < arr.length/2 일 때 사용 권장
+
+function findCombination_Select_Less(dwarf, sum, selectNumber) {
   let result = [];
 
-    // 코드 구현 시작 영역
     function combination(arr, sum, selectNumber, selectNumberOrigin){
 
       let innerRes = [];
@@ -46,24 +46,9 @@ function answer(dwarf, sum, selectNumber) {
   };
 
   combination(dwarf, sum, selectNumber, selectNumber);
-    // 코드 구현 종료 영역
+
   
   return result;
 };
   
-  /* main code */
-  let input = [
-    // TC: 1
-    [1, 5, 6, 7, 10, 12, 19, 29, 33],
-  
-    // TC: 2
-    [25, 23, 11, 2, 18, 3, 28, 6, 37],
-  
-    // TC: 3
-    [3, 37, 5, 36, 6, 22, 19, 2, 28],
-  ];
-  
-  for (let i = 0; i < input.length; i++) {
-    process.stdout.write(`#${i + 1} `);
-    console.log(answer(input[i], 100, 7));
-  };
+export {findCombination_Select_Less};
