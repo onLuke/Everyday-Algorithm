@@ -1,6 +1,6 @@
-//고를 원소 개수 > arr.length/2 일 때 사용 권장
+//모든 조합을 반환
 
-  function recursive(arr, result, startIndex, originIdx, selectNumber){
+  function combination(arr, result, startIndex, originIdx, selectNumber){
     // console.log(`result1 = ${result}`);
 
     if(startIndex==selectNumber){
@@ -25,6 +25,9 @@ let result = [];
 let selectNumber = 3;
 
 recursive(arr, result, 0, 0, selectNumber);
+
+
+export {combination};
 
 
 

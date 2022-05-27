@@ -1,6 +1,7 @@
-//고를 원소 개수 < arr.length/2 일 때 사용 권장
+//합계가 특정 값이 되는 조합 찾기
 
-function findCombination_Select_Less(dwarf, sum, selectNumber) {
+
+function findCombination(dwarf, sum, selectNumber) {
   let result = [];
 
     function combination(arr, sum, selectNumber, selectNumberOrigin){
@@ -51,4 +52,4 @@ function findCombination_Select_Less(dwarf, sum, selectNumber) {
   return result;
 };
   
-export {findCombination_Select_Less};
+export {findCombination};
