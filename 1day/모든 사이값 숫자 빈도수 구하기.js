@@ -9,15 +9,17 @@ function answer(s, e) {
     for(i = s; i<=e; i++){
       arr.push(i);
     };
-  
+    //사이에 존재하는 숫자를 모두 arr에 넣는다
   
     let splited = arr.join("").split("");
-  
+    //arr에 들어 간 원소 숫자들을 1자리 씩 나눠서 각 원소로 배치한다.
+
     splited.sort((x,y) => x-y);
-    let res = [];
+    //0~9까지 정렬
   
     result = "0123456789".split("");
-  
+    //map 사용을 위한 0~9까지의 배열 생성
+    
     //console.log(result);
     //console.log("splited");
     //console.log(splited);
@@ -26,11 +28,9 @@ function answer(s, e) {
       if(splited.indexOf(el)>-1){
       return splited.lastIndexOf(el) - splited.indexOf(el)+1
       }else return 0;
+
+      //splited를 sort했으므로 result의 각 원소 0~9를 가진 제일 끝 index - 제일 앞 index + 1 을 하면 각 숫자의 개수가 반환된다.
     });
-  
-  
-  
-    
   
     // 코드 구현 종료 영역
   
