@@ -1,7 +1,7 @@
 //s = 탐색 시작할 원소의 index
 //r = 뽑을 원소 개수
 
-function permutation(arr, s, r){
+function permutation1(arr, s, r){
     if(s == r){
         count++;
         console.log(arr.join(" "));
@@ -16,4 +16,4 @@ function permutation(arr, s, r){
 }
 
 
-export {permutation};
+export {permutation1};

@@ -1,7 +1,7 @@
 //모든 순열 반환
 
 
-function permutation(arr, selectNumber){
+function permutation2(arr, selectNumber){
 
     let result = [];
 
@@ -31,5 +31,5 @@ function permutation(arr, selectNumber){
 };
 
 
-export {permutation};
+export {permutation2};
   
