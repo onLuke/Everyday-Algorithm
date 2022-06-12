@@ -1,0 +1,36 @@
+
+/* 
+1 <= s.length <= 105
+s contains only lowercase English letters.
+*/
+
+var minDeletions = function(s) {
+    let answer = 0;
+    const arr = s.split('');
+    const dict = {};
+    const mem = [];
+    arr.map(char => {
+        dict[char] = dict[char] ? dict[char] + 1 : 1;
+    })
+    const values = Object.values(dict);
+    values.map(v => {
+        if(mem[v]){
+            let nextPos = v;
+            while(nextPos > 0){
+                if(!mem[nextPos]){
+                    mem[nextPos] = true;
+                    answer += v - nextPos;
+                    break;
+                }else{
+                    nextPos--;
+                }
+            }
+            if(nextPos === 0){
+                answer += v;
+            }
+        }else{
+            mem[v] = true;
+        }
+    })
+    return answer;
+};
