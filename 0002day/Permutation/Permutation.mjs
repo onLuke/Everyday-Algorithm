@@ -10,7 +10,7 @@ function permutation1(arr, s, r){
 
     for(let i = s; i < arr.length; i++){
         [arr[s], arr[i]] = [arr[i], arr[s]]; //swap
-        permutation(arr, s+1, r);
+        permutation1(arr, s+1, r);
         [arr[s], arr[i]] = [arr[i], arr[s]]; //원상복귀
     }
 }
